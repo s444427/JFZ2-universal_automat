@@ -1,0 +1,33 @@
+Zadanie 2 ()
+
+
+Automat nad alfabetem ASCII jest zdefiniowany w pliku o następującym formacie:
+
+1) Dla każdego przejścia mamy linię:
+
+<z> <do> <symbol>
+
+gdzie <z> i <do> to numery stanów, a <symbol> to pojedynczy znak ASCII,
+
+2) Dla każdego stanu końcowego mamy linię:
+
+<stan>
+
+gdzie <stan> to numer stanu, będącego stanem końcowym.
+
+Program czyta automat z pliku podanego jako argument programu, a
+następnie, dla każdej linii przeczytanej ze standardowego wejścia
+sprawdza, czy jest ona akceptowana przez automat (z pominięciem znaku
+końca linii), jeśli tak, program wypisuje na standardowe wyjście linię:
+
+tak
+
+jeśli nie, linię:
+
+nie
+
+Nazwa programu: run
+
+Program będzie wywołany w taki sposób:
+
+cat input.txt | ./run automat.txt > output.txt

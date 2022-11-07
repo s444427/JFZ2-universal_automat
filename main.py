@@ -43,14 +43,24 @@ def map_maker(filename):
     return map, map_size, final_states
 
 
+def set_result(result):
+
+    return 0
+
+
 if __name__ == '__main__':
-    map, map_size, final_states = map_maker("input.txt")
+    map, map_size, final_states = map_maker("automat.txt")
     # print(map)
 
     curr_state = [0]
     next_state = []
 
-    test_str = 'abbab'
+    with open("input.txt") as file:
+        lines = file.readlines()
+        lines = [line.rstrip() for line in lines]
+
+    test_str = lines[0]
+    print(test_str, len(test_str))
 
     # 1. Char by char
     for curr_char in test_str:
@@ -71,7 +81,11 @@ if __name__ == '__main__':
         if i in final_states:
             decision = True
 
+    # Submit decision
+    f = open("output.txt", "a")
+
     if decision:
-        print("tak")
+        f.write("tak")
     else:
-        print("nie")
+        f.write("nie")
+    f.close()
